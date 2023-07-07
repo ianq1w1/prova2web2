@@ -8,7 +8,7 @@ const emit = defineEmits(['song-added']);
 const form = useForm({
     title: '',
     artist: '',
-    Algum: '',
+    album: '',
     genre: '',
 });
 

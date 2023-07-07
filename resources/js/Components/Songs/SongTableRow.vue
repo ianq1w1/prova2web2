@@ -5,11 +5,12 @@ import Modal from '@/Components/Modal.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import DangerButton from '@/Components/DangerButton.vue';
 import { useForm } from '@inertiajs/vue3';
+import {ref} from 'vue';
 
 import EditSongForm from './EditSongForm.vue';
 
 const props = defineProps({
-    musica: {
+    song: {
         type: Object,
         required: true,
     },
@@ -24,7 +25,7 @@ function remove() {
 
 <template>
     <tr class="border-b">
-        <td>{{ musica.title }}</td>
+        <td>{{ song.title }}</td>
         <td>{{ song.artist }}</td>
         <td>{{ song.album }}</td>
         <td>{{ song.genre }}</td>
