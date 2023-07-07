@@ -17,6 +17,7 @@ const props = defineProps({
 })
 
 const showDeleteModal = ref(false);
+const showEditModal = ref(false);
 
 function remove() {
     useForm({}).delete(route('songs.destroy', props.song.id));

@@ -20,7 +20,7 @@ const form = useForm({
 });
 
 function submit() {
-    form.post(route('songs.update', props.song.id), {
+    form.put(route('songs.update', props.song.id), {
         onSuccess: () => {
             emit('song-updated');
         },
