@@ -103,7 +103,7 @@ class PlaylistController extends Controller
             abort(403);
         }
         $playlist->songs()->detach();
-        $playlist->apagate();
+        $playlist->delete(); //apagate é foda heinkkkkkkkkkkkkkk
     }
 
     public function addSong(Request $request, Playlist $playlist, Song $song)
