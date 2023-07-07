@@ -3,13 +3,14 @@ import MyTextInput from '../MyTextInput.vue';
 import { useForm } from '@inertiajs/vue3';
 import PrimaryButton from '../PrimaryButton.vue';
 
-const emit = defineProps(['playlist-added']);
+const emit = defineEmits(['playlist-added']);
 
 const form = useForm({
     title: '',
+    songs: '',
 });
 
-function Submit() {
+function submit() {
     form.post(route('playlists.store'), {
         onSuccess: () => {
             form.reset();
@@ -17,6 +18,8 @@ function Submit() {
         },
     });
 }
+
+
 </script>
 
 <template>

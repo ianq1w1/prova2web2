@@ -2,7 +2,7 @@
 import PlaylistTR from './PlaylistTableRow.vue';
 
 defineProps({
-    Playlist: {
+    playlists: {
         type: Array,
         required: true,
     },

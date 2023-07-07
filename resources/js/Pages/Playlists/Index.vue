@@ -1,4 +1,5 @@
 <script setup>
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import PlaylistsTable from '@/Components/Playlists/PlaylistsTable.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import Modal from '@/Components/Modal.vue';
@@ -12,9 +13,11 @@ defineProps({
     },
     songs: {
         type: Array,
+        required: true,
     },
 });
 
+const showAddPlaylistModal = ref(false);
 </script>
 
 <template>
@@ -25,7 +28,7 @@ defineProps({
         <div class="p-2 flex flex-col">
             <PlaylistsTable :playlists="playlists" :songs="songs" />
         </div>
-        <PrimaryButton @change="showAddPlaylistModal = true">
+        <PrimaryButton @click="showAddPlaylistModal = true">
             Add Playlist
         </PrimaryButton>
 
